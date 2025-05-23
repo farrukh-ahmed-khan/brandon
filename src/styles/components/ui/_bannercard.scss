@@ -1,0 +1,171 @@
+:root {
+  --primary-color: #0b2f2f;
+  --white: #fff;
+  --fontgilroy: "Gilroy-Medium";
+  --fontkarantine: "Karantina";
+}
+
+.banner-card-wrapper {
+  .banner-card {
+    padding: 20px;
+    border-radius: 30px;
+    background: url("/images/card-banner-bg.png");
+    box-shadow: 0px 0px 126.4px 0px #0b4343 inset;
+    overflow: hidden;
+    .content {
+      margin: 40px 0;
+      h5 {
+        color: var(--white);
+        font-family: var(--fontgilroy);
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 155.556% */
+        letter-spacing: -1.08px;
+      }
+      h4 {
+        color: #fff;
+        font-family: var(--fontgilroy);
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 46px;
+        letter-spacing: -1.5px;
+      }
+    }
+    .img-wrap {
+      position: relative;
+      height: 300px;
+      top: 0;
+      transition: all 1s ease;
+      .img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transition: all 1s ease;
+        img {
+          width: 60%;
+          height: 60%;
+          transition: all 1s ease;
+        }
+      }
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+        opacity: 0.8;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(28.799999237060547px);
+        transition: all 1s ease;
+      }
+      .btns-wrap {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 50px;
+        .banner-btn {
+          position: relative;
+          border-radius: 52px;
+          background: #163266;
+          backdrop-filter: blur(28.8px);
+          color: #fff;
+          text-align: center;
+          font-family: var(--fontgilroy);
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 77px;
+          letter-spacing: -0.6px;
+          text-transform: capitalize;
+          padding: 0px 10px 0px 20px;
+          text-decoration: none;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 80%;
+          transition: background-color 0.5s ease, color 0.5s ease;
+          overflow: hidden;
+          .icon-wrap {
+            position: relative;
+            border-radius: 32px;
+            background: #fff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            img {
+              transition: transform 0.4s ease;
+              position: relative;
+              z-index: 2;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              background: url("/images/arrow-btn-icon.png") no-repeat center
+                center;
+              background-size: contain;
+              width: 100%;
+              height: 100%;
+              left: -100%;
+              z-index: 1;
+              transition: left 0.4s ease;
+            }
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            background: #fff;
+            background-size: contain;
+            width: 50px;
+            height: 50px;
+            left: 80%;
+            border-radius: 60px;
+            z-index: -1;
+            // opacity: 0;
+            transition: all 0.4s ease;
+          }
+          &:hover {
+            color: var(--primary-color);
+            &::after {
+              width: 94%;
+              height: 80%;
+              left: 10px;
+              // opacity: 1;
+            }
+            .icon-wrap {
+              img {
+                transform: translateX(100%);
+              }
+
+              &::before {
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      .img-wrap {
+        top: -100px;
+        .img {
+          img {
+            width: 80%;
+            height: 80%;
+          }
+        }
+        .overlay {
+          opacity: 0;
+        }
+      }
+      .btns-wrap{
+        margin-top: 0px;
+      }
+    }
+  }
+}
