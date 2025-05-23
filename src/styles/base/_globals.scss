@@ -21,6 +21,11 @@
   src: local("Gilroy"),
     url("../../assets/fonts/Gilroy-Medium.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Retro Gramophone";
+  src: local("Retro"),
+    url("../../assets/fonts/RetroGramophone.ttf") format("truetype");
+}
 
 html {
   scroll-behavior: smooth !important;
